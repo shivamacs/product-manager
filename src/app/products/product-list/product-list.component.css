@@ -1,0 +1,33 @@
+.list-toolbar {
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0px 0px 3px rgb(103, 58, 183);
+}
+
+.product-list {
+  padding: 15px;
+  border: 1px solid rgb(103, 58, 183);
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0px 0px 3px rgb(103, 58, 183);
+}
+
+.mat-list-item {
+  text-decoration: none;
+}
+
+.mat-list-item:hover {
+  color: white !important;
+  background: rgb(103, 58, 183);
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-button {
+  margin-left: 10px;
+  color: red;
+}
+
+.selected {
+  background: #EEEEEE;
+}

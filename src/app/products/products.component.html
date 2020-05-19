@@ -1,0 +1,51 @@
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+
+<app-top-bar></app-top-bar>
+<div class="products">
+  <app-product-list [products]="products" (selectedEvent)="receiveProduct($event)"></app-product-list>
+  <div class="crud">
+     <div class="new-product">
+        <app-product-stock [products]="products"></app-product-stock>
+        <div class="add-product">
+           <mat-form-field>
+             <input matInput #productName type="text" placeholder="Name" [(ngModel)]="name">
+             <button mat-button *ngIf="name" matSuffix mat-icon-button aria-label="Clear" (click)="name=''">
+               <mat-icon>close</mat-icon>
+             </button>
+           </mat-form-field>
+           <mat-form-field>
+             <input matInput #productPrice type="number" min="0" placeholder="Price" [(ngModel)]="price">
+             <span matPrefix style="padding-right: 2px;">$</span>
+             <button mat-button *ngIf="price" matSuffix mat-icon-button aria-label="Clear" (click)="price=''">
+               <mat-icon>close</mat-icon>
+             </button>
+           </mat-form-field>
+           <div class="rating-slider">
+             <label>Rating</label>
+             <mat-slider #productRating thumbLabel [displayWith]="formatLabel" min="0" max="10" step="0.5" [(ngModel)]="rating"></mat-slider>
+           </div>
+           <button mat-raised-button (click)="add(productName.value, productPrice.value, productRating.value); name='';
+            price=''; rating='';" title="Add product" [disabled]="!productName.value || !productPrice.value || !productRating.value"
+            color="primary">Add product</button>
+        </div>
+      </div>
+      <div class="product-details" *ngIf="selectedProduct">
+        <app-product-detail [selectedProduct]="selectedProduct" (selectedEvent)="receiveProduct($event)" (existingEvent)="recieveExistingProducts($event)"></app-product-detail>
+        <button mat-raised-button class="delete" title="Delete selected product" (click)="delete(selectedProduct)" color="warn">Delete this product</button>
+      </div>
+   </div>
+</div>
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>

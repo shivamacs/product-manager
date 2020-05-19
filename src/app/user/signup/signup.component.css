@@ -1,0 +1,19 @@
+mat-card {
+  margin: auto;
+  width: 50%;
+  margin-top: 2em;
+  text-align: center;
+}
+.signup-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-container > * {
+  width: 100%;
+}
+
+.hint {
+  width: 100% !important;
+  height: 50px !important;
+}

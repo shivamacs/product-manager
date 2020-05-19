@@ -1,0 +1,7 @@
+<mat-toolbar class="rating-toolbar" color="primary">
+  <span>Rating</span>
+</mat-toolbar>
+
+<div class="rating">
+  <input class="form-control form-control-lg" type="number" min="0" max="10" [(ngModel)]="selectedProduct.rating" placeholder="Rating" value="{{ selectedProduct.rating }}">
+</div>

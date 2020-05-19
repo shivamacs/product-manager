@@ -1,0 +1,14 @@
+<div *ngIf="products">
+  <mat-toolbar class="list-toolbar" color="primary">
+    <mat-toolbar-row>
+      <span>Products</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-nav-list class="product-list" color="accent">
+    <a mat-list-item *ngFor="let product of products" [ngClass]="{ 'selected': product === selectedProduct }" (click)="onSelect(product)">{{ product.name }} <span class="spacer"></span>
+    ${{ product.price }}.00
+  <mat-divider [inset]="true"></mat-divider>
+    </a>
+  </mat-nav-list>
+</div>

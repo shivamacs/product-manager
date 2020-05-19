@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <span>Product Manager</span>
+</mat-toolbar>
+
+<nav mat-tab-nav-bar mat-align-tabs="center" class="mat-background-primary">
+<a mat-tab-link *ngFor="let link of links"
+     [routerLink]=link.path
+     routerLinkActive
+     #RouterLinkActive="routerLinkActive"
+     [active]="RouterLinkActive.isActive">
+    {{link.label}}
+</a>
+</nav>
+
+<router-outlet></router-outlet>

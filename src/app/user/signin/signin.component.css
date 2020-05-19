@@ -1,0 +1,15 @@
+mat-card {
+  margin: auto;
+  width: 50%;
+  margin-top: 2em;
+  text-align: center;
+}
+
+.signin-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-container > * {
+  width: 100%;
+}

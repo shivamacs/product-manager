@@ -1,0 +1,7 @@
+.stock-toolbar {
+  background-color: #EEEEEE;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #BBBBBB;
+}

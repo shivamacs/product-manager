@@ -1,0 +1,8 @@
+.example-spacer {
+  flex: auto;
+}
+
+.mat-stroked-button:hover {
+  color: white;
+  text-decoration: none;
+}
